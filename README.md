@@ -33,8 +33,7 @@ Análise Exploratória de Dados do dataset de vinhos
 	Cada algoritmo tem uma função de custo diferente.
 
 	1) O algoritmo de regressão logística com one vs the rest utiliza n_classes estimadores de regressão logística. Basicamente, ele prevê uma classe, e agrupa as outras classes em outra classe (por isso One vs the rest).
-	Após isso, é selecionado a classe com valor máximo que foi obtido para cada estimador. Cada estimador utiliza função de custo cross entropy loss.. A função de custo aumentada, ou seja, explicitando o tipo de regularização e sua penalidade depende dos
-parâmetros inseridos na modelagem (avaliamos no gridSearch regularizaçaõ do tipo l1 e l2, com peso nas penalidades diferentes); 
+	Após isso, é selecionado a classe com valor máximo que foi obtido para cada estimador. Cada estimador utiliza função de custo cross entropy loss.. A função de custo aumentada, ou seja, explicitando o tipo de regularização e sua penalidade depende dos parâmetros inseridos na modelagem (avaliamos no gridSearch regularizaçaõ do tipo l1 e l2, com peso nas penalidades diferentes); 
 
 	2) Para o algoritmo de Random Forest, o primeiro passo é selecionar uma amostra (bootstrap) dos dados, selecionar randomicamente m features (basicamente random forest performa feature selection),
 	selecionar o melhor split dos dados (baseado em alguma métrica de melhor split), utilizando somente essas m features, e repetir esse processo até um nó final. Repetir todo esse processo novamente para outras árvore. O número de Árvores
