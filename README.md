@@ -7,20 +7,20 @@ Análise Exploratória de Dados do dataset de vinhos
 
 # a. Como foi a definição da sua estratégia de modelagem?
 - Após a Exploração de Dados, selecionamos alguns algoritmos de natureza diferente
-	Regressão
+	1) Regressão
 		Regressão Logística (usando One vs The Rest para classificação multiclasse)
-	Bagging
+	2) Bagging
 		Random Forest (uma extensão de Bagging)
-	Boosting
+	3) Boosting
 		xgBoost
-	Árvores de Decisão
+	4) Árvores de Decisão
 		Decision Tree
-	Support Vector Machines
+	5) Support Vector Machines
 		SVM (usando One vs The Rest para classificação multiclasse)
-	Algoritmos de outras naturezas
+	6) Algoritmos de outras naturezas
 		K - Nearest Neighbors
 
-	E Gaussian Naive Bayers como baseline
+	7) Gaussian Naive Bayers como baseline
 
 
 - O Objetivo, por meio do GridSearch foi seliconar os melhores parâmetros de cada modelo, como o tipo de regularização (no caso de regressão logística), e a penalidade do fator de regularização,
@@ -49,9 +49,7 @@ Análise Exploratória de Dados do dataset de vinhos
 
 
 # c. Qual foi o critério utilizado na seleção do modelo final?
-
-	O modelo final é escolhido pelo menor erro utilizando o conjunto de validação. O conjunto de validação foi escolhido mantendo a proporção das classes. Assumindo que os dados passados são
-	uma amostra aleatória do conjunto universo, inferimos que o erro no conjunto de validação é uma boa estimativa do erro fora da amostra. Obviamente, o conjunto de validação não deve ser usada para treino.
+O modelo final é escolhido pelo menor erro utilizando o conjunto de validação. O conjunto de validação foi escolhido mantendo a proporção das classes. Assumindo que os dados passados são uma amostra aleatória do conjunto universo, inferimos que o erro no conjunto de validação é uma boa estimativa do erro fora da amostra. Obviamente, o conjunto de validação não deve ser usada para treino.
 
 
 # d. Qual foi o critério utilizado para validação do modelo? Por que escolheu utilizar este método?
