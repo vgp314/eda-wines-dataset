@@ -61,8 +61,7 @@ Análise Exploratória de Dados do dataset de vinhos
 	uma amostra aleatória do conjunto universo, inferimos que o erro no conjunto de validação é uma boa estimativa do erro fora da amostra. Obviamente, o conjunto de validação não deve ser usada para treino.
 
 
-# d. Qual foi o critério utilizado para validação do modelo? Por que escolheu utilizar
-este método?
+# d. Qual foi o critério utilizado para validação do modelo? Por que escolheu utilizar este método?
 
 	Utilizamos GridSearch para a escolha dos melhores parâmetros, utilizando StratifiedKfold com o número de folds = 3, de modo a preservar a proporção das classes, e assim, não inserir nenhum viés.
 
