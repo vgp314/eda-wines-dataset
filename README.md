@@ -1,4 +1,8 @@
 # eda-wines-dataset
+
+-Vinicius Gomes Pereira
+- viniciusgomespe@gmail.com
+
 Análise Exploratória de Dados do dataset de vinhos
 
 # a. Como foi a definição da sua estratégia de modelagem?
