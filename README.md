@@ -56,13 +56,12 @@ Análise Exploratória de Dados do dataset de vinhos
 
 # d. Qual foi o critério utilizado para validação do modelo? Por que escolheu utilizar este método?
 
-	Utilizamos GridSearch para a escolha dos melhores parâmetros, utilizando StratifiedKfold com o número de folds = 3, de modo a preservar a proporção das classes, e assim, não inserir nenhum viés.
+- Utilizamos GridSearch para a escolha dos melhores parâmetros, utilizando StratifiedKfold com o número de folds = 3, de modo a preservar a proporção das classes, e assim, não inserir nenhum viés.
 
 # e. Quais evidências você possui de que seu modelo é suficientemente bom?
 	
-	1) Comparamos com Gaussian Naive Bayes (baseline), que assume que as features são independentes (naive) e obtivemos melhor resultado
-	2) Assumindo que nosso conjunto de dados é uma amostra randômica do conjunto universo, avaliamos nossos modelos em um conjunto não utilizado para aprendizagem, e por isso, podemos utilizar essa métrica
-	do erro como generalização do erro fora da amostra
-	3) Evitamos overfitting, utilizando diferentes técnicas de regularização, e penalidade para esses erros.
-	4) Utilizamos modelos de diferentes naturezas, de modo a conseguir captar de diferentes modos o comportamento dos dados.
-	5) O split de dados foi utilizado mantendo a proporção de classes
+- Comparamos com Gaussian Naive Bayes (baseline), que assume que as features são independentes (naive) e obtivemos melhor resultado.
+- Assumindo que nosso conjunto de dados é uma amostra randômica do conjunto universo, avaliamos nossos modelos em um conjunto não utilizado para aprendizagem, e por isso, podemos utilizar essa métrica do erro como generalização do erro fora da amostra
+- Evitamos overfitting, utilizando diferentes técnicas de regularização, e penalidade para esses erros.
+- Utilizamos modelos de diferentes naturezas, de modo a conseguir captar de diferentes modos o comportamento dos dados.
+- O split de dados foi utilizado mantendo a proporção de classes
