@@ -44,7 +44,7 @@ parâmetros inseridos na modelagem (avaliamos no gridSearch regularizaçaõ do t
 	3) A função de custo de árvores de decisão é parecida com a da random forest, em que o melhor split minimizaria o erro de predição.
 
 
-	4) O xgBoost é uma implementção do GradientBoosting. Basicamente, as técnicas de Boosting aplica n preditores fracos (um pouco melhores que uma escolha randômica), de modo que, cada passo do aprendizado,
+	4) O xgBoost é uma implementação do GradientBoosting. Basicamente, as técnicas de Boosting aplica n preditores fracos (um pouco melhores que uma escolha randômica), de modo que, cada passo do aprendizado,
 	a distribuição dos dados é ajustada de modo a privilegiar regiões dos dados que o preditor fraco performou errado (essas regiões recebem pesos maiores). Iterativamente, o próximo preditor fraco vai aprender melhor
 	nos dados que o preditor da iteração anterior previu erroneamente. Em seguida, combinamos cada um dos n preditores, em que separadamente são fracos, mas cada um performa melhor em uma região dos dados diferente.
 	A função erro é aplicada em cada iteração. A função erro de xGBoost utilizada foi a cross entropy loss.
