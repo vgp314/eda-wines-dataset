@@ -30,28 +30,21 @@ Análise Exploratória de Dados do dataset de vinhos
 
 
 # b. Como foi definida a função de custo utilizada?
-	Cada algoritmo tem uma função de custo diferente.
+- Cada algoritmo tem uma função de custo diferente.
 
-	1) O algoritmo de regressão logística com one vs the rest utiliza n_classes estimadores de regressão logística. Basicamente, ele prevê uma classe, e agrupa as outras classes em outra classe (por isso One vs the rest).
-	Após isso, é selecionado a classe com valor máximo que foi obtido para cada estimador. Cada estimador utiliza função de custo cross entropy loss.. A função de custo aumentada, ou seja, explicitando o tipo de regularização e sua penalidade depende dos parâmetros inseridos na modelagem (avaliamos no gridSearch regularizaçaõ do tipo l1 e l2, com peso nas penalidades diferentes); 
+- O algoritmo de regressão logística com one vs the rest utiliza n_classes estimadores de regressão logística. Basicamente, ele prevê uma classe, e agrupa as outras classes em outra classe (por isso One vs the rest).
+- Após isso, é selecionado a classe com valor máximo que foi obtido para cada estimador. Cada estimador utiliza função de custo cross entropy loss.. A função de custo aumentada, ou seja, explicitando o tipo de regularização e sua penalidade depende dos parâmetros inseridos na modelagem (avaliamos no gridSearch regularizaçaõ do tipo l1 e l2, com peso nas penalidades diferentes); 
 
-	2) Para o algoritmo de Random Forest, o primeiro passo é selecionar uma amostra (bootstrap) dos dados, selecionar randomicamente m features (basicamente random forest performa feature selection),
-	selecionar o melhor split dos dados (baseado em alguma métrica de melhor split), utilizando somente essas m features, e repetir esse processo até um nó final. Repetir todo esse processo novamente para outras árvore. O número de Árvores
-	é escolhida no GridSearch (em que foi testato diferentes números); Por fim, por meio de um voting, é escolhido a predição correta (para os casos de regressão é feito o valor esperado).
-	Consideramos que o critério de melhor split, minima o erro a função custo. O número de features para serem usadas no split foi escolhido por meio do GridSearch também (auto ou sqrt)
+- Para o algoritmo de Random Forest, o primeiro passo é selecionar uma amostra (bootstrap) dos dados, selecionar randomicamente m features (basicamente random forest performa feature selection), selecionar o melhor split dos dados (baseado em alguma métrica de melhor split), utilizando somente essas m features, e repetir esse processo até um nó final. Repetir todo esse processo novamente para outras árvore. O número de Árvores é escolhida no GridSearch (em que foi testato diferentes números); Por fim, por meio de um voting, é escolhido a predição correta (para os casos de regressão é feito o valor esperado). Consideramos que o critério de melhor split, minima o erro a função custo. O número de features para serem usadas no split foi escolhido por meio do GridSearch também (auto ou sqrt)
 
-	3) A função de custo de árvores de decisão é parecida com a da random forest, em que o melhor split minimizaria o erro de predição.
+- A função de custo de árvores de decisão é parecida com a da random forest, em que o melhor split minimizaria o erro de predição.
 
 
-	4) O xgBoost é uma implementação do GradientBoosting. Basicamente, as técnicas de Boosting aplica n preditores fracos (um pouco melhores que uma escolha randômica), de modo que, cada passo do aprendizado,
-	a distribuição dos dados é ajustada de modo a privilegiar regiões dos dados que o preditor fraco performou errado (essas regiões recebem pesos maiores). Iterativamente, o próximo preditor fraco vai aprender melhor
-	nos dados que o preditor da iteração anterior previu erroneamente. Em seguida, combinamos cada um dos n preditores, em que separadamente são fracos, mas cada um performa melhor em uma região dos dados diferente.
-	A função erro é aplicada em cada iteração. A função erro de xGBoost utilizada foi a cross entropy loss.
+- O xgBoost é uma implementação do GradientBoosting. Basicamente, as técnicas de Boosting aplica n preditores fracos (um pouco melhores que uma escolha randômica), de modo que, cada passo do aprendizado, a distribuição dos dados é ajustada de modo a privilegiar regiões dos dados que o preditor fraco performou errado (essas regiões recebem pesos maiores). Iterativamente, o próximo preditor fraco vai aprender melhor nos dados que o preditor da iteração anterior previu erroneamente. Em seguida, combinamos cada um dos n preditores, em que separadamente são fracos, mas cada um performa melhor em uma região dos dados diferente. A função erro é aplicada em cada iteração. A função erro de xGBoost utilizada foi a cross entropy loss.
 
-	5) A função erro de SVM é o inverso da distância do melhor hiperplano que separa os dados, em relação ao ponto mais próximo ao hiperplano. A função de custo aumentada inclui um fator penalidade dos erros de predição e
-	fator de regularização dos parâmetros do plano.
+- A função erro de SVM é o inverso da distância do melhor hiperplano que separa os dados, em relação ao ponto mais próximo ao hiperplano. A função de custo aumentada inclui um fator penalidade dos erros de predição e fator de regularização dos parâmetros do plano.
 
-	6) Para o algoritmo de K - nearest Neighbors, foram utilzadas diversas métricas de distância (euclidiana por exemplo), escolhidas pelo GridSearch. A classificação é computada pelo voting dos k vizinhos mais próximos. Presume-se que escolher o vizinho mais próximo minimiza o erro de predição.
+- Para o algoritmo de K - nearest Neighbors, foram utilzadas diversas métricas de distância (euclidiana por exemplo), escolhidas pelo GridSearch. A classificação é computada pelo voting dos k vizinhos mais próximos. Presume-se que escolher o vizinho mais próximo minimiza o erro de predição.
 
 
 
